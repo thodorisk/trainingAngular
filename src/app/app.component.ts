@@ -7,6 +7,9 @@ import { IExample, IExampleWithOptional } from './interfaces/examples.interface'
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  today: Date = new Date();
+  value: number = 2;
+
   public onButtonClicked(): void {
     alert('header button was clicked');
   }

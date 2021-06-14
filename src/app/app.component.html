@@ -1,1 +1,17 @@
 <app-header [title]="'Hello!'" (onButtonClicked)="onButtonClicked()"></app-header>
+
+<p>
+  Today is: {{ today | date }}
+</p>
+
+<p>
+  Today is: {{ today | date:'MM/dd/yy' }}
+</p>
+
+<p>
+  Today is: {{ today | date:'longDate' }}
+</p>
+
+<p>
+  The square value of "{{value}}" is: {{ value | customPipe }}!
+</p>

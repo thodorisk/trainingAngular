@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SubscribersService } from 'src/app/services/subscribers-service.service';
+import { SubscribersService } from 'src/app/services/subscribers.service';
 
 @Component({
   selector: 'app-active-subscribers',

@@ -1,17 +1,7 @@
-<app-header [title]="'Hello!'" (onButtonClicked)="onButtonClicked()"></app-header>
-
-<p>
-  Today is: {{ today | date }}
-</p>
-
-<p>
-  Today is: {{ today | date:'MM/dd/yy' }}
-</p>
-
-<p>
-  Today is: {{ today | date:'longDate' }}
-</p>
-
-<p>
-  The square value of "{{value}}" is: {{ value | customPipe }}!
-</p>
+<div class="container">
+      <app-active-subscribers [subscribers]="activeSubscribers" (subscriberSetToInactive)="onSetToInactive($event)"></app-active-subscribers>
+      <app-inactive-subscribers [subscribers]="inactiveSubscribers" (subscriberSetToActive)="onSetToActive($event)"></app-inactive-subscribers>
+    <!--
+      Optimize this app by adding a UsersService which manages the active and inactive users.
+    -->
+</div>

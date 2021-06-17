@@ -3,14 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header.component';
-import { CustomPipePipe } from './custom-pipe.pipe';
+import { ActiveSubscribersComponent } from './components/active-subscribers/active-subscribers.component';
+import { InactiveSubscribersComponent } from './components/inactive-subscribers/inactive-subscribers.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    CustomPipePipe
+    ActiveSubscribersComponent,
+    InactiveSubscribersComponent
   ],
   imports: [
     BrowserModule,

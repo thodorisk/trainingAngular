@@ -1,0 +1,6 @@
+<h3>Inactive Users</h3>
+<ul>
+  <li *ngFor="let subscriber of subscribers">
+    {{ subscriber }} | <button (click)="onSetToActive(subscriber)">Set to Active</button>
+  </li>
+</ul>

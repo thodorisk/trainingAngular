@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { IExample, IExampleWithOptional } from './interfaces/examples.interface';
 
 @Component({
   selector: 'app-root',
@@ -7,17 +6,16 @@ import { IExample, IExampleWithOptional } from './interfaces/examples.interface'
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  today: Date = new Date();
-  value: number = 2;
+  public activeSubscribers: string[] = ['Subscriber A', 'Subscriber B'];
+  public inactiveSubscribers: string[] = ['Subscriber C', 'Subscriber D'];
 
-  public onButtonClicked(): void {
-    alert('header button was clicked');
+  public onSetToInactive(subscriber: string): void {
+    this.inactiveSubscribers.push(subscriber);
+    this.activeSubscribers = this.activeSubscribers.filter(x => x !== subscriber);
   }
 
-  public testInterfaces(id: number, name: string): IExample {
-    return {
-      id: id,
-      name: name
-    }
+  public onSetToActive(subscriber: string): void {
+    this.activeSubscribers.push(subscriber);
+    this.inactiveSubscribers = this.inactiveSubscribers.filter(x => x !== subscriber);
   }
 }

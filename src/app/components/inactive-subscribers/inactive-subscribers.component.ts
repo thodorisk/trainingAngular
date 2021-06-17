@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component } from '@angular/core';
+import { SubscribersService } from 'src/app/services/subscribers-service.service';
 
 @Component({
   selector: 'app-inactive-subscribers',
@@ -6,10 +7,15 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrls: ['./inactive-subscribers.component.scss']
 })
 export class InactiveSubscribersComponent {
-  @Input() subscribers: string[] = [];
-  @Output() subscriberSetToActive: EventEmitter<string> = new EventEmitter<string>();
+  public subscribers: string[] = [];
 
-  public onSetToActive(subscriber: string): void {
-    this.subscriberSetToActive.emit(subscriber);
+  constructor(private subscribersService: SubscribersService) {}
+
+  public ngOnInit(): void {
+    this.subscribers = this.subscribersService.inactiveSubscribers;
+  }
+
+  onSetToActive(subscriber: string) {
+    this.subscribersService.setToActive(subscriber);
   }
 }

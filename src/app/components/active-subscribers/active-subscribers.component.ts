@@ -1,15 +1,21 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { SubscribersService } from 'src/app/services/subscribers-service.service';
 
 @Component({
   selector: 'app-active-subscribers',
   templateUrl: './active-subscribers.component.html',
   styleUrls: ['./active-subscribers.component.scss']
 })
-export class ActiveSubscribersComponent {
-  @Input() subscribers: string[] = [];
-  @Output() subscriberSetToInactive: EventEmitter<string> = new EventEmitter<string>();
+export class ActiveSubscribersComponent implements OnInit {
+  public subscribers: string[] = [];
+
+  constructor(private subscribersService: SubscribersService) {}
+
+  public ngOnInit(): void {
+    this.subscribers = this.subscribersService.activeSubscribers;
+  }
 
   public onSetToInactive(subscriber: string): void {
-    this.subscriberSetToInactive.emit(subscriber);
+    this.subscribersService.setToInactive(subscriber);
   }
 }

@@ -1,7 +1,4 @@
 <div class="container">
-      <app-active-subscribers [subscribers]="activeSubscribers" (subscriberSetToInactive)="onSetToInactive($event)"></app-active-subscribers>
-      <app-inactive-subscribers [subscribers]="inactiveSubscribers" (subscriberSetToActive)="onSetToActive($event)"></app-inactive-subscribers>
-    <!--
-      Optimize this app by adding a UsersService which manages the active and inactive users.
-    -->
+      <app-active-subscribers></app-active-subscribers>
+      <app-inactive-subscribers></app-inactive-subscribers>
 </div>

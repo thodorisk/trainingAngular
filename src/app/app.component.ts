@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { interval, Subscription } from 'rxjs';
+import { interval, Observable, Subscription } from 'rxjs';
 import { filter, map, take } from 'rxjs/operators';
 
 @Component({
@@ -8,28 +8,37 @@ import { filter, map, take } from 'rxjs/operators';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  private firstObsSubscription!: Subscription;
+  private firstSubscription!: Subscription;
 
-  constructor() {
-  }
+  public ngOnInit(): void {
+    const customObservable: Observable<number> = new Observable(observer => {
+      let count = 0;
+      setInterval(() => {
+        observer.next(count);
+        if (count === 6) {
+          observer.complete();
+        }
+        if (count > 4) {
+          observer.error(new Error('Count is > 4!'));
+        }
+        count++;
+      }, 1000);
+    });
 
-  ngOnInit() {
-    // 1) Create an observer that listens to interval observable.​
 
-    // 2) Use the appropriate operator to log Second: … in the console.​
-
-    // 3) Use the appropriate operator to log values < 5.​
-
-    // 4) Use the appropriate operator to get a the first value that is emitted.​
-
-    // 5) Use the appropriate operator to console a message before and after the emitted value.
-    
-    this.firstObsSubscription = interval(1000).subscribe(count => {
-      console.log(count);
+    this.firstSubscription = customObservable.pipe(
+      filter((data: number) => data > 0), 
+    ).subscribe(data => {
+      console.log(data);
+    }, error => {
+      console.log(error);
+      alert(error.message);
+    }, () => {
+      console.log('Completed!');
     });
   }
 
   ngOnDestroy(): void {
-    this.firstObsSubscription.unsubscribe();
+    this.firstSubscription.unsubscribe();
   }
 }

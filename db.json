@@ -1,0 +1,39 @@
+{
+    "customers": [
+        {
+            "id": 1,
+            "firstName": "John",
+            "lastName": "Doe",
+            "tel": 2102121212,
+            "address": "Chiou 34"
+        },
+        {
+            "id": 2,
+            "firstName": "Robert",
+            "lastName": "Be Niro",
+            "tel": 2102121890,
+            "address": "Lesvou 55"
+        },
+        {
+            "id": 3,
+            "firstName": "Meryl",
+            "lastName": "Streep",
+            "tel": 2102121777,
+            "address": "Samou 12"
+        },
+        {
+            "id": 4,
+            "firstName": "Al",
+            "lastName": "Pacino",
+            "tel": 2102121333,
+            "address": "Limnou 6"
+        },
+        {
+            "id": 5,
+            "firstName": "Charlize",
+            "lastName": "Theron",
+            "tel": 2102121456,
+            "address": "Samothrakis 11"
+        }
+    ]
+}

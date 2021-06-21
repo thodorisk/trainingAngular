@@ -1,4 +1,4 @@
-header {
+nav {
     margin-bottom: 35px;
     background-color: azure;
 }
@@ -12,5 +12,9 @@ header {
     &-item {
         display: inline-block;
         margin-right: 50px;
+
+        a.active {
+            text-decoration: none;
+        }
     }
 }

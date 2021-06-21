@@ -1,7 +1,16 @@
-td {
-    min-width: 180px;
+header {
+    margin-bottom: 35px;
+    background-color: azure;
 }
 
-tr.even {
-    background-color: #eee;
+.menu-list {
+    margin: 0;
+    padding: 15px 0;
+    list-style: none;
+
+    
+    &-item {
+        display: inline-block;
+        margin-right: 50px;
+    }
 }

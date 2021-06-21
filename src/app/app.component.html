@@ -1,20 +1,11 @@
-<p>Angular http client</p>
+<header>
+    <ul class="menu-list">
+        <li class="menu-list-item">
+            <a routerLink="/customers">Home (customers list)</a>
+        </li>
+    </ul>
+</header>
 
-<table *ngIf="customers.length > 0">
-    <thead>
-        <tr>
-            <th>Firstname</th>
-            <th>Lastname</th>
-            <th>Phone</th>
-            <th>Address</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let customer of customers; let even = even; let odd = odd" class="row" [ngClass]="{ odd: odd, even: even }">
-            <td>{{ customer.firstName }}</td>
-            <td>{{ customer.lastName }}</td>
-            <td>{{ customer.tel }}</td>
-            <td>{{ customer.address }}</td>
-        </tr>
-    </tbody>
-  </table>
+<main>
+    <router-outlet></router-outlet>
+</main>

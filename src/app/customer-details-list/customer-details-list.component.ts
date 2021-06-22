@@ -13,11 +13,11 @@ export class CustomerDetailsListComponent implements OnInit {
 
   constructor(private customerService: CustomerService) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.fetchCustomers();
   }
 
-  fetchCustomers() {
+  fetchCustomers(): void {
     this.customerService.getCustomers().subscribe(resp => this.customers = resp);
   }
 
@@ -26,7 +26,9 @@ export class CustomerDetailsListComponent implements OnInit {
   }
 
   deleteCustomer(customer: I_Customer): void {
-
+    this.customerService.deleteCustomer(customer.id).subscribe((resp) => {
+      this.fetchCustomers();
+    });
   }
 
 }

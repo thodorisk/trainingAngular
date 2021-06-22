@@ -1,0 +1,15 @@
+<table *ngIf="contracts.length > 0">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Cost</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let contract of contracts; let even = even; let odd = odd" class="row" [ngClass]="{ odd: odd, even: even }">
+            <td>{{ contract.title }}</td>
+            <td>{{ contract.cost }}</td>
+        </tr>
+    </tbody>
+</table>
+

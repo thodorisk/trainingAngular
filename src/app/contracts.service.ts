@@ -1,21 +1,21 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { I_Customer } from './customer';
+import { I_Contract } from './contracts';
 
 @Injectable({
   providedIn: 'root'
 })
-export class CustomerService {
+export class ContractsService {
   private _apiUrl: string = 'http://localhost:3000';
 
   constructor(private _http: HttpClient) { }
 
-  public getCustomers(): Observable<I_Customer[]> {
-    return this._http.get<I_Customer[]>(`${this._apiUrl}/customers`);
+  public getContracts(): Observable<I_Contract[]> {
+    return this._http.get<I_Contract[]>(`${this._apiUrl}/contracts`);
   }
 
-  public getCustomer() {
+  public getContract() {
     // provide your implementation
   }
 }

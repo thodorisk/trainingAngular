@@ -35,5 +35,32 @@
             "tel": 2102121456,
             "address": "Samothrakis 11"
         }
+    ],
+    "contracts": [
+        {
+            "id": 1,
+            "title": "Contact 1",
+            "cost": 100
+        },
+        {
+            "id": 2,
+            "title": "Contact 2",
+            "cost": 80
+        },
+        {
+            "id": 3,
+            "title": "Contact 3",
+            "cost": 120
+        },
+        {
+            "id": 4,
+            "title": "Contact 4",
+            "cost": 150
+        },
+        {
+            "id": 5,
+            "title": "Contact 5",
+            "cost": 200
+        }
     ]
 }

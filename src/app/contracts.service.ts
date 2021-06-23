@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { I_Contract } from './contracts';
+import { I_Customer } from './customer';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,7 @@ export class ContractsService {
     return this._http.get<I_Contract[]>(`${this._apiUrl}/contracts`);
   }
 
-  public getContract() {
-    // provide your implementation
+  public getContract(id: string | null): Observable<I_Contract> {
+    return this._http.get<I_Contract>(`${this._apiUrl}/contracts/${id}`);
   }
 }

@@ -8,6 +8,7 @@ import { CustomersListComponent } from './customers-list/customers-list.componen
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { ContractListComponent } from './contract-list/contract-list.component';
 import { CustomerDetailsComponent } from './customer-details/customer-details.component';
+import { ContractDetailsComponent } from './contract-details/contract-details.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { CustomerDetailsComponent } from './customer-details/customer-details.co
     CustomersListComponent,
     ErrorPageComponent,
     ContractListComponent,
-    CustomerDetailsComponent
+    CustomerDetailsComponent,
+    ContractDetailsComponent
   ],
   imports: [
     BrowserModule,

@@ -4,4 +4,5 @@ export interface I_Customer {
     lastName: string;
     tel: number;
     address: string;
+    dateOfBirth?: string;
 }

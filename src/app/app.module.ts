@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { CustomersListComponent } from './customers-list/customers-list.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { ContractListComponent } from './contract-list/contract-list.component';
+import { CustomerDetailsComponent } from './customer-details/customer-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CustomersListComponent,
     ErrorPageComponent,
-    ContractListComponent
+    ContractListComponent,
+    CustomerDetailsComponent
   ],
   imports: [
     BrowserModule,

@@ -5,7 +5,8 @@
             "firstName": "John",
             "lastName": "Doe",
             "tel": 2102121212,
-            "address": "Chiou 34"
+            "address": "Chiou 34",
+            "dateOfBirth": "12/12/1980"
         },
         {
             "id": 2,

@@ -15,7 +15,7 @@ export class CustomerService {
     return this._http.get<I_Customer[]>(`${this._apiUrl}/customers`);
   }
 
-  public getCustomer() {
-    // provide your implementation
+  public getCustomer(id: string | null): Observable<I_Customer> {
+    return this._http.get<I_Customer>(`${this._apiUrl}/customers/${id}`);
   }
 }

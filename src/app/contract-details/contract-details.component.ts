@@ -15,6 +15,7 @@ export class ContractDetailsComponent implements OnInit {
   constructor(private route: ActivatedRoute, private contractsService: ContractsService) { }
 
   ngOnInit(): void {
+    //this.route.paramMap.subscribe(resp => console.log(resp));
     this.contractId = this.route.snapshot.paramMap.get('id');
     this.contractsService.getContract(this.contractId).subscribe(resp => this.contract = resp);
   }

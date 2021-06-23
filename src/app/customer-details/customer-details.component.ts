@@ -9,14 +9,12 @@ import { CustomerService } from '../customer.service';
   styleUrls: ['./customer-details.component.scss']
 })
 export class CustomerDetailsComponent implements OnInit {
-  public customerId: string | null = '';
+  // public customerId: string | null = '';
   public customer: I_Customer | null = null;
 
-  constructor(private route: ActivatedRoute, private customerService: CustomerService) { }
+  constructor(private route: ActivatedRoute, private customerService: CustomerService) {}
 
   ngOnInit(): void {
-    this.customerId = this.route.snapshot.paramMap.get('id');
-
-    this.customerService.getCustomer(this.customerId).subscribe(resp => this.customer = resp);
+    this.customer = this.route.snapshot.data.customer;
   }
 }

@@ -13,28 +13,32 @@
             "firstName": "Robert",
             "lastName": "Be Niro",
             "tel": 2102121890,
-            "address": "Lesvou 55"
+            "address": "Lesvou 55",
+            "dateOfBirth": "12/12/1981"
         },
         {
             "id": 3,
             "firstName": "Meryl",
             "lastName": "Streep",
             "tel": 2102121777,
-            "address": "Samou 12"
+            "address": "Samou 12",
+            "dateOfBirth": "12/12/1982"
         },
         {
             "id": 4,
             "firstName": "Al",
             "lastName": "Pacino",
             "tel": 2102121333,
-            "address": "Limnou 6"
+            "address": "Limnou 6",
+            "dateOfBirth": "12/12/1983"
         },
         {
             "id": 5,
             "firstName": "Charlize",
             "lastName": "Theron",
             "tel": 2102121456,
-            "address": "Samothrakis 11"
+            "address": "Samothrakis 11",
+            "dateOfBirth": "12/12/1984"
         }
     ],
     "contracts": [

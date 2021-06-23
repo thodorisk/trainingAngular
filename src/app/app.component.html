@@ -3,6 +3,7 @@
         <li class="menu-list-item">
             <a routerLink="/customers" routerLinkActive="active">Home (customers list)</a>
             <a routerLink="/contracts" routerLinkActive="active">Contracts list</a>
+            <a *ngIf="isLogoutButtonVisible()" (click)="logout()">Logout</a>
         </li>
     </ul>
 </nav>

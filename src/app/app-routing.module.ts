@@ -8,9 +8,14 @@ import { CustomersListComponent } from './customers-list/customers-list.componen
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { AuthGuard } from './login/auth.guard';
 import { LoginComponent } from './login/login.component';
+import { LoginGuard } from './login/login.guard';
 
 const routes: Routes = [
-  {path: 'login', component: LoginComponent},
+  {
+    path: 'login',
+    component: LoginComponent,
+    canActivate: [ LoginGuard ]
+  },
   {
     path: 'customers',
     component: CustomersListComponent,
@@ -23,7 +28,7 @@ const routes: Routes = [
       customer: CustomerResolver
     }
   },
-  {path: 'contracts', component: ContractListComponent},
+  {path: 'contracts', component: ContractListComponent, canActivate: [ AuthGuard ]},
   {path: 'contracts/:id', component: ContractDetailsComponent},
   {path: '', pathMatch: 'full', redirectTo: 'customers'},
   {path: '**', component: ErrorPageComponent}

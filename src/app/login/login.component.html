@@ -1,0 +1,31 @@
+<article>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="form-item">
+            <label for="username">
+                Username:
+                <input id="username" type="text" formControlName="username" />
+            </label>
+            <div *ngIf="submitted && f.username.errors?.required" class="form-error">
+                This field is required.
+            </div>
+            <div *ngIf="submitted && f.username.errors?.email" class="form-error">
+                Provide a valid email.
+            </div>
+        </div>
+        <div class="form-item">
+            <label for="password">
+                Password:
+                <input id="password" type="password" formControlName="password"/>
+            </label>
+            <div *ngIf="submitted && f.password.errors?.required" class="form-error">
+                This field is required.
+            </div>
+            <div *ngIf="submitted && f.password.errors?.minLength" class="form-error">
+                Provide a valid password with at least 5 characters.
+            </div>
+        </div>
+        <div class="form-item">
+            <button type="submit">Login</button>
+        </div>
+    </form>
+</article>

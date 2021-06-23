@@ -9,6 +9,8 @@ import { ErrorPageComponent } from './error-page/error-page.component';
 import { ContractListComponent } from './contract-list/contract-list.component';
 import { CustomerDetailsComponent } from './customer-details/customer-details.component';
 import { ContractDetailsComponent } from './contract-details/contract-details.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -17,12 +19,14 @@ import { ContractDetailsComponent } from './contract-details/contract-details.co
     ErrorPageComponent,
     ContractListComponent,
     CustomerDetailsComponent,
-    ContractDetailsComponent
+    ContractDetailsComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

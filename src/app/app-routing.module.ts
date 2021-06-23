@@ -6,11 +6,15 @@ import { CustomerDetailsComponent } from './customer-details/customer-details.co
 import { CustomerResolver } from './customer.resolver';
 import { CustomersListComponent } from './customers-list/customers-list.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
+import { AuthGuard } from './login/auth.guard';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
+  {path: 'login', component: LoginComponent},
   {
     path: 'customers',
-    component: CustomersListComponent
+    component: CustomersListComponent,
+    canActivate: [ AuthGuard ]
   },
   {
     path: 'customers/:id',
